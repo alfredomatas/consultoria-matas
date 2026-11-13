@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Alfredo Matas — Consultoría en Formulación de Proyectos</title>
+<title>Alfredo Matas · Consultoría en Formulación de Proyectos</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -164,8 +164,8 @@
   .reveal.in{opacity:1; transform:translateY(0);}
 
   /* WHO */
-  .who-grid{display:grid; grid-template-columns:1fr 1fr; gap:48px;}
-  @media (max-width:800px){.who-grid{grid-template-columns:1fr;}}
+  .who-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:40px;}
+  @media (max-width:900px){.who-grid{grid-template-columns:1fr;}}
   .who-grid p{color:var(--grafito-suave); font-size:15.5px;}
   .who-grid h3{font-size:17px; margin-bottom:10px; font-family:'IBM Plex Sans'; font-weight:600; color:var(--petroleo);}
 
@@ -192,6 +192,8 @@
   .svc-card p{font-size:14.5px; color:var(--grafito-suave);}
   .svc-card--full{grid-column:1 / -1; border-left:3px solid var(--ocre);}
   .svc-card--full h3{color:var(--ocre);}
+  .svc-card--accent{border-left:3px solid var(--ocre);}
+  .svc-card--accent h3{color:var(--ocre);}
 
   /* METHOD TIMELINE */
   .timeline{display:flex; gap:0; position:relative;}
@@ -248,6 +250,18 @@
   .btn-send:hover{background:#D8C79A;}
   .contact-direct{font-size:13px; color:#D8C79A;}
   .contact-direct a{text-decoration:underline;}
+  .btn-wa{
+    font-family:'IBM Plex Mono', monospace; font-weight:600; font-size:13px; letter-spacing:.06em; text-transform:uppercase;
+    background:#1F7A4D; color:#fff; padding:14px 22px; text-decoration:none; display:inline-flex; align-items:center; gap:8px;
+  }
+  .btn-wa:hover{background:#18633E;}
+  .wa-float{
+    position:fixed; right:20px; bottom:20px; width:56px; height:56px; border-radius:50%; background:#1F7A4D;
+    display:flex; align-items:center; justify-content:center; box-shadow:0 4px 14px rgba(0,0,0,.25); z-index:50;
+  }
+  .wa-float:hover{background:#18633E;}
+  .wa-float svg, .btn-wa svg{fill:#fff;}
+  .ledger td.cond{font-size:13px; color:var(--grafito-suave);}
 
   footer{padding:28px 0; text-align:center;}
   footer p{font-size:12px; color:var(--grafito-suave); font-family:'IBM Plex Mono', monospace;}
@@ -280,7 +294,7 @@
       <p class="lead">Formulación, evaluación financiera y gestión de proyectos para microempresas y PyMEs, a cargo de un Contador Público con formación de posgrado en administración financiera del sector público. Atención presencial en Jujuy y consultoría remota para clientes de todo el país.</p>
       <div class="cta-row">
         <a class="btn-stamp" href="#contacto">Solicitar una consulta</a>
-        <a class="link-quiet" href="#financiamiento">Ver líneas de financiamiento vigentes →</a>
+        <a class="link-quiet" href="#financiamiento">Ver dónde buscar financiamiento →</a>
       </div>
     </div>
     <div class="seal-wrap">
@@ -300,6 +314,7 @@
   <div class="wrap">
     <div class="cred-item">CPN · Mat. 2262</div>
     <div class="cred-item">Mag. en Adm. Financiera del Sector Público</div>
+    <div class="cred-item">Esp. en Dirección de Proyectos (UBA)</div>
     <div class="cred-item">Docente Adjunto FCE-UNJu</div>
     <div class="cred-item">Investigador · Fondos Fiduciarios Públicos</div>
     <div class="cred-item">Consultoría presencial y remota</div>
@@ -318,54 +333,52 @@
         <h3>PyMEs en expansión</h3>
         <p>Empresas ya en marcha que buscan financiamiento para inversión o capital de trabajo, y necesitan un plan de negocio con evaluación económico-financiera rigurosa: flujo de fondos, VAN, TIR y punto de equilibrio.</p>
       </div>
+      <div>
+        <h3>Monotributistas y pequeños comercios</h3>
+        <p>Feriantes, almacenes y prestadores de pequeños servicios que quieren tener sus números en orden: registros, estados contables y la carpeta que pide un banco o un organismo cuando llega el momento de pedir un crédito.</p>
+      </div>
     </div>
   </div>
 </section>
 
 <section class="folio" id="financiamiento">
   <div class="wrap">
-    <div class="folio-head"><span class="folio-num">FOLIO II</span><h2>Líneas de financiamiento vigentes en Jujuy</h2></div>
+    <div class="folio-head"><span class="folio-num">FOLIO II</span><h2>Dónde buscar financiamiento en Jujuy</h2></div>
     <div class="reveal" id="ledger-wrap">
       <div class="table-scroll">
         <table class="ledger">
           <thead>
-            <tr><th>Línea</th><th>Destinatarios</th><th>Monto máx.</th><th>Tasa / plazo</th></tr>
+            <tr><th>Instrumento</th><th>Quién lo otorga</th><th>Para qué sirve</th><th>Condiciones</th></tr>
           </thead>
           <tbody>
             <tr>
-              <td>Microsol (CME)</td>
-              <td>Grupos de microemprendedores, garantía solidaria</td>
-              <td class="num">Según operatoria</td>
-              <td class="num">Tasa promocional</td>
+              <td>Microcréditos y préstamos promocionales</td>
+              <td>Consejo de la Microempresa (Ministerio de Desarrollo Económico y Producción)</td>
+              <td>Inversión y capital de trabajo de microemprendimientos</td>
+              <td class="cond">Tasas subsidiadas y plazos promocionales, según la operatoria abierta</td>
             </tr>
             <tr>
-              <td>Línea Especial Comercios-Microempresa</td>
-              <td>Indumentaria, calzado, gastronomía</td>
-              <td class="num">$5.000.000</td>
-              <td class="num">12% anual · 3 meses gracia · 12 cuotas</td>
+              <td>Garantías</td>
+              <td>FOGAJUY</td>
+              <td>Aval para que una MiPyME acceda a un crédito bancario</td>
+              <td class="cond">Según el reglamento del fondo y el banco interviniente</td>
             </tr>
             <tr>
-              <td>Convenio Banco Macro</td>
-              <td>Capital de trabajo</td>
-              <td class="num">$30.000.000</td>
-              <td class="num">29,25% anual · 12 cuotas</td>
+              <td>Créditos PyME de inversión y capital de trabajo</td>
+              <td>Banco Nación</td>
+              <td>Proyectos de producción o comercialización de bienes y servicios</td>
+              <td class="cond">Tasa fija en pesos, con bonificaciones según el tipo de cuenta del cliente</td>
             </tr>
             <tr>
-              <td>Fortalecimiento Comercial (Banco Nación)</td>
-              <td>Inversión y capital de trabajo</td>
-              <td class="num">$200.000.000</td>
-              <td class="num">27% anual · hasta 72 cuotas</td>
-            </tr>
-            <tr>
-              <td>FINDPRO</td>
-              <td>MiPyMEs con certificado vigente</td>
-              <td class="num">$20.000.000</td>
-              <td class="num">Bonif. 8% FONDEP · garantía FOGAR</td>
+              <td>Líneas provinciales con tasa bonificada</td>
+              <td>Gobierno de Jujuy, junto con Banco Macro y Banco Nación</td>
+              <td>Comercios y PyMEs, por convocatoria</td>
+              <td class="cond">El paquete para comercios anunciado en junio de 2026 rigió hasta el 30/09/2026. Hay que consultar si se abren nuevas líneas</td>
             </tr>
           </tbody>
         </table>
       </div>
-      <p class="ledger-note">Datos de referencia relevados de fuentes oficiales y de prensa provincial, sujetos a modificación por los organismos otorgantes. Se verifican condiciones vigentes al momento de formular cada proyecto.</p>
+      <p class="ledger-note">Montos, tasas y plazos cambian seguido, por eso no los publico acá. Los confirmo con el organismo al empezar cada proyecto. Relevamiento: noviembre de 2026.</p>
     </div>
   </div>
 </section>
@@ -396,10 +409,15 @@
         <h3>Capacitación y talleres</h3>
         <p>Talleres grupales, presenciales o virtuales, sobre formulación de proyectos, acceso al crédito y gestión financiera básica.</p>
       </div>
-      <div class="svc-card svc-card--full">
+      <div class="svc-card">
         <span class="folio-num">05</span>
-        <h3>Consultoría remota de proyectos</h3>
-        <p>Todos los servicios anteriores, disponibles de forma 100% remota para clientes de cualquier provincia: reuniones por videollamada, documentación digital y seguimiento a distancia, con la misma rigurosidad técnica que la modalidad presencial.</p>
+        <h3>Contabilidad para monotributistas y pequeños comercios</h3>
+        <p>Registraciones, libros y estados contables bajo la Resolución Técnica 54 de la FACPCE (Norma Unificada Argentina de Contabilidad), para feriantes, almacenes y pequeños servicios. Con los libros al día, armar la carpeta para un crédito lleva mucho menos tiempo.</p>
+      </div>
+      <div class="svc-card svc-card--accent">
+        <span class="folio-num">06</span>
+        <h3>Consultoría remota</h3>
+        <p>Los servicios anteriores, disponibles de forma 100% remota para clientes de cualquier provincia: reuniones por videollamada, documentación digital y seguimiento a distancia. El trabajo técnico es el mismo que en la modalidad presencial.</p>
       </div>
     </div>
   </div>
@@ -423,10 +441,11 @@
     <div class="profile-grid reveal" id="perfil-grid">
       <div class="profile-frame"><img src="foto-perfil.jpg" alt="Alfredo Matas - Foto de perfil"></div>
       <div class="profile-text">
-        <p>Contador Público Nacional (Matrícula CPCE N° 2262), Magíster en Administración Financiera y Control del Sector Público, docente adjunto de la Facultad de Ciencias Económicas (UNJu) e investigador con categorización en curso. Doctorando en Políticas Públicas y Desarrollo (UNJu) y maestrando en Dirección de Proyectos Estratégicos e Innovadores (UBA), con investigación aplicada en fondos fiduciarios públicos y modelos de gestión para microempresas y PyMEs.</p>
+        <p>Contador Público Nacional (Matrícula CPCE N° 2262), Magíster en Administración Financiera y Control del Sector Público, Especialista en Dirección de Proyectos Predictivos y Adaptativos (UBA, 2026), docente adjunto de la Facultad de Ciencias Económicas (UNJu) e investigador con categorización en curso. Doctorando en Políticas Públicas y Desarrollo (UNJu) y maestrando en Dirección de Proyectos Estratégicos e Innovadores (UBA), con investigación aplicada en fondos fiduciarios públicos y modelos de gestión para microempresas y PyMEs.</p>
         <div class="taglist">
           <span class="tag">Ley 24.156</span>
           <span class="tag">Ley 24.441</span>
+          <span class="tag">RT 54 (NUA)</span>
           <span class="tag">Fondos fiduciarios públicos</span>
           <span class="tag">Docencia UNJu</span>
           <span class="tag">Investigación aplicada</span>
@@ -452,6 +471,7 @@
             <option value="Formulación de proyecto para financiamiento">Formulación de proyecto para financiamiento</option>
             <option value="Plan de negocio / factibilidad">Plan de negocio / factibilidad</option>
             <option value="Rendición y control de fondos">Rendición y control de fondos</option>
+            <option value="Contabilidad / estados contables">Contabilidad / estados contables</option>
             <option value="Capacitación / taller">Capacitación / taller</option>
             <option value="Otro">Otro</option>
           </select>
@@ -469,15 +489,18 @@
       </div>
       <div class="contact-actions">
         <button class="btn-send" onclick="enviarConsulta()">Enviar solicitud</button>
+        <a class="btn-wa" href="https://wa.me/5493884844489?text=Hola%20Alfredo%2C%20quiero%20hacerle%20una%20consulta%20sobre%20un%20proyecto." target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z"/></svg>WhatsApp 388 484-4489</a>
         <span class="contact-direct">o escriba directamente a <a href="mailto:amatas2010@gmail.com">amatas2010@gmail.com</a></span>
       </div>
     </div>
   </div>
 </section>
 
+<a class="wa-float" href="https://wa.me/5493884844489?text=Hola%20Alfredo%2C%20quiero%20hacerle%20una%20consulta%20sobre%20un%20proyecto." target="_blank" rel="noopener" aria-label="Escribir por WhatsApp"><svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z"/></svg></a>
+
 <footer>
   <div class="wrap">
-    <p>ALFREDO MATAS — CONTADOR PÚBLICO NACIONAL — MAT. CPCE N° 2262 — SAN SALVADOR DE JUJUY, ARGENTINA</p>
+    <p>ALFREDO MATAS · CONTADOR PÚBLICO NACIONAL · MAT. CPCE N° 2262 · SAN SALVADOR DE JUJUY, ARGENTINA</p>
   </div>
 </footer>
 
@@ -488,7 +511,7 @@
     const tipo = document.getElementById('f-tipo').value;
     const modalidad = document.getElementById('f-modalidad').value;
     const mensaje = document.getElementById('f-mensaje').value || '(sin detalle)';
-    const asunto = encodeURIComponent('Solicitud de consulta — ' + tipo);
+    const asunto = encodeURIComponent('Solicitud de consulta: ' + tipo);
     const cuerpo = encodeURIComponent(
       'Nombre: ' + nombre + '\n' +
       'Contacto: ' + contacto + '\n' +
